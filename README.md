@@ -10,6 +10,13 @@
 ```
 docker-compose up -d
 ```
+### Entry
+```
+Step1: open localhost:3000/register
+```
+```
+Step2: login localhost:3000
+```
 ### 
 
 
