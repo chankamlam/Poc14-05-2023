@@ -1,6 +1,7 @@
 ### 声明
 这是一个十分粗糙POC，一切从简以下是不足地方：
 - 没有考虑代码重构和优化
+- 没有打磨UI与代码细节
 - 没有过多检查验证数据合规性
 - 没有检查授权和权限
 - 没有考虑安全性
@@ -38,10 +39,10 @@ docker-compose down --rmi all
 _注意：运行Docker-compose up后，请等1分钟再登录前端测试（原因是等待MYSQL数据结构初始化设定1分钟后执行）_
 |Endpiont|Method|Description|Usage|
 | :----:| :----: | :----:| :----:|
-| localhost:4000/users | GET | get the list of users from "users" table||
+| localhost:4000/users | GET | get the list of users from "users" table|获取所有用户信息|
 | localhost:4000/login | POST | login admin platform (Default: username=>admin,password:123456)|登录管理后台|
 | localhost:4000/register | POST | register user record with name & id card number & id card image |上传用户资料|
-| localhost:4000/upload | POST | for upload id card image ||
+| localhost:4000/upload | POST | for upload id card image |上传图片或文件|
 
 ### Data Structure
 <img width="978" alt="Screenshot 2023-05-14 at 3 43 03 PM" src="https://github.com/chankamlam/Poc14-05-2023/assets/9009522/69a92636-9dad-4c8c-90cc-a9900bb361ec">
