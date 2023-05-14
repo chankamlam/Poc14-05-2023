@@ -12,6 +12,7 @@
 docker-compose up -d
 ```
 ### Entry
+_注意：运行Docker-compose up后，请等1分钟再登录前端测试（原因是等待MYSQL数据结构初始化设定1分钟后执行）_
 _Step1: 打开用户上传资料页面_
 ```
 localhost:3000/register
@@ -36,7 +37,6 @@ docker-compose down --rmi all
 | mysql | Database | Docker Image with script |
 
 ### API
-_注意：运行Docker-compose up后，请等1分钟再登录前端测试（原因是等待MYSQL数据结构初始化设定1分钟后执行）_
 |Endpiont|Method|Description|Usage|
 | :----:| :----: | :----:| :----:|
 | localhost:4000/users | GET | get the list of users from "users" table|获取所有用户信息|
