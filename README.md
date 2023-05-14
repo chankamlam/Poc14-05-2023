@@ -23,3 +23,5 @@ docker-compose down --rmi all
 | localhost:4000/login | POST | login admin platform (Default: username=>admin,password:123456)|
 | localhost:4000/register | POST | register user record with name & id card number & id card image |
 | localhost:4000/upload | POST | for upload id card image |
+
+### Data Structure
