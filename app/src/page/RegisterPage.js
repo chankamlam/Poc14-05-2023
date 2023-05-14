@@ -6,6 +6,7 @@ import {
 } from '@ant-design/icons';
 import { Navigate } from "react-router-dom";
 import url from "../common/url"
+import { observer } from "mobx-react-lite"
 
 const { Dragger } = Upload;
 const getBase64 = (img, callback) => {
@@ -25,7 +26,7 @@ const beforeUpload = (file) => {
   return isJpgOrPng && isLt2M;
 };
 
-const RegisterPage = () => {
+const RegisterPage = observer(({store}) => {
   const [validated, setValidated] = useState(false);
   const onFinish = (values) => {
     values.cardImg = values.cardImg.file.response.data.fileName
@@ -41,6 +42,7 @@ const RegisterPage = () => {
     }).then((res) => {
       res.json().then((data) => {
         console.log(data);
+        store.loadData();
         if (data.status === "SUCESS") {
           setValidated(true);
         } 
@@ -196,5 +198,5 @@ const RegisterPage = () => {
   </div>
 
   );
-};
+});
 export default RegisterPage;

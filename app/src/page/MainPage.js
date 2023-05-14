@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TablePanel from "../cmp/TablePanel"
 import SearchPanel from "../cmp/SearchPanel"
-import DetailPanel from '../cmp/DetailPanel';
 import { observer } from "mobx-react-lite"
 import { Link } from "react-router-dom";
 import {
@@ -65,10 +64,6 @@ const MainPanel = observer(({store}) => {
             },
             onClick: () => setCollapsed(!collapsed),
           })}
-          {/* <div style={{float:'right',display:'flex'}}>
-            <div>Ken Chan</div>
-            <Avatar shape="square" icon={<UserOutlined />} />
-          </div> */}
         </Header>
         <Content
           style={{
@@ -88,12 +83,6 @@ const MainPanel = observer(({store}) => {
               store.index == 0 && (<div>
                 <SearchPanel store={store}/>
                 <TablePanel store={store}/>
-              </div>)
-            }
-            {
-
-              store.index == 1 && (<div>
-                <DetailPanel store={store}/>
               </div>)
             }
 

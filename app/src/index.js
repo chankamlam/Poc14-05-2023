@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <RegisterPage />,
+    element: <RegisterPage store={store.user.listModel}/>,
   },
   {
     path: "/user",
