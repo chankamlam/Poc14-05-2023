@@ -1,0 +1,11 @@
+FROM node
+CMD mkdir /api
+WORKDIR /api
+COPY . .
+CMD npm i
+
+EXPOSE 4000
+
+RUN chmod +x ./initDB.sh
+
+ENTRYPOINT ["./initDB.sh"]
