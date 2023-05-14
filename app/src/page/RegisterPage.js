@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Checkbox, Form, Input,Card,Upload,message,Modal } from 'antd';
+import { Button, Checkbox, Form, Input,Card,Upload,message,Modal,notification } from 'antd';
 import {
   PlusOutlined,
   LoadingOutlined
@@ -56,7 +56,7 @@ const RegisterPage = observer(({store}) => {
 
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
-  const [isModalOpen,setIsModalOpen] = useState(false)
+  // const [isModalOpen,setIsModalOpen] = useState(false)
   const [isUploaded,setIsUploaded] = useState(false)
 
   const handleUploadChange = (info) => {
@@ -69,14 +69,11 @@ const RegisterPage = observer(({store}) => {
       getBase64(info.file.originFileObj, (url) => {
         setLoading(false);
         setImageUrl(url);
-        setIsModalOpen(true)
+        openNotification()
         setIsUploaded(true)
       });
     }
   };
-  const handleModalOk = ()=>{
-    setIsModalOpen(false)
-  }
   const uploadButton = (
     <div>
       {loading ? <LoadingOutlined /> : <PlusOutlined />}
@@ -89,6 +86,16 @@ const RegisterPage = observer(({store}) => {
       </div>
     </div>
   );
+
+const openNotification = () => {
+  notification.open({
+    message: 'Notification',
+    description:`Upload image completed`,
+    onClick: () => {
+      console.log('Notification Clicked!');
+    },
+  });
+};
 
   return (<div
     style={{
@@ -192,9 +199,9 @@ const RegisterPage = observer(({store}) => {
       </Form.Item>
     </Form>
     </Card>
-    <Modal title="System" open={isModalOpen} onCancel={handleModalOk} onOk={handleModalOk} closable={false}>
+    {/* <Modal title="System" open={isModalOpen} onCancel={handleModalOk} onOk={handleModalOk} closable={false}>
         <p>Upload file completed!</p>
-      </Modal>
+      </Modal> */}
   </div>
 
   );
