@@ -11,11 +11,13 @@
 docker-compose up -d
 ```
 ### Entry
+Step1: 打开用户上传资料页面
 ```
-Step1: open localhost:3000/register
+Open localhost:3000/register
 ```
+Step2: 上传完资料，请往此页面登录管理后端
 ```
-Step2: login localhost:3000
+Login localhost:3000
 ```
 ### 
 
