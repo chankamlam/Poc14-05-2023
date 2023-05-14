@@ -1,8 +1,8 @@
 FROM node
-CMD mkdir /api
+RUN mkdir /api
 WORKDIR /api
 COPY . .
-CMD npm i
+RUN npm i
 
 EXPOSE 4000
 

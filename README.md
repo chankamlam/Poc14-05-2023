@@ -5,12 +5,12 @@
 - 没有检查授权和权限
 - 没有考虑安全性
 - 没有编写代码单元测试和代码覆盖率
-- much i skip here
 
 ### Bootup
 ```
 docker-compose up -d
 ```
+### 
 
 
 ### Clean
@@ -26,12 +26,12 @@ docker-compose down --rmi all
 | mysql | Database | Docker Image with script |
 
 ### API
-|Endpiont|Method|Description|
-| :----:| :----: | :----:| 
-| localhost:4000/users | GET | get the list of users from "users" table|
-| localhost:4000/login | POST | login admin platform (Default: username=>admin,password:123456)|
-| localhost:4000/register | POST | register user record with name & id card number & id card image |
-| localhost:4000/upload | POST | for upload id card image |
+|Endpiont|Method|Description|Usage|
+| :----:| :----: | :----:| :----:|
+| localhost:4000/users | GET | get the list of users from "users" table||
+| localhost:4000/login | POST | login admin platform (Default: username=>admin,password:123456)|登录管理后台|
+| localhost:4000/register | POST | register user record with name & id card number & id card image |上传用户资料|
+| localhost:4000/upload | POST | for upload id card image ||
 
 ### Data Structure
 <img width="978" alt="Screenshot 2023-05-14 at 3 43 03 PM" src="https://github.com/chankamlam/Poc14-05-2023/assets/9009522/69a92636-9dad-4c8c-90cc-a9900bb361ec">
